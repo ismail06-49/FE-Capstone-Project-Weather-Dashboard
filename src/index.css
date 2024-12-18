@@ -15,12 +15,12 @@
     @apply bg-gray-900 text-white
   }
   .light-bar {
-    @apply bg-white text-gray-900
+    @apply bg-gray-200 text-gray-900
   }
   .dark-input {
-    @apply bg-gray-900 text-white  ring-white
+    @apply bg-gray-900 text-white  ring-gray-200
   }
   .light-input {
-    @apply bg-white text-gray-900 ring-gray-600
+    @apply bg-gray-200 text-gray-900 ring-gray-600
   }
 }
