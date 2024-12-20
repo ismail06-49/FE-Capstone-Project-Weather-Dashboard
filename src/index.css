@@ -15,7 +15,7 @@
     @apply bg-gray-900 text-white
   }
   .light-bar {
-    @apply bg-gray-300 text-gray-900
+    @apply bg-gray-400 text-gray-900
   }
   .dark-input {
     @apply bg-gray-900 text-white  ring-gray-200
@@ -24,9 +24,15 @@
     @apply bg-gray-200 text-gray-900 ring-gray-600
   }
   .dark-main{
-    @apply bg-gray-800 text-white
+    @apply bg-gray-700 text-white
   }
   .light-main{
     @apply bg-gray-200 text-gray-800
+  }
+  .dark-card{
+    @apply bg-gray-800 text-white
+  }
+  .light-card{
+    @apply bg-gray-300 text-gray-800
   }
 }

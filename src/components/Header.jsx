@@ -23,8 +23,8 @@ export default function Header() {
                         <div className="search-input w-full">
                             <input
                                 type="text"
-                                className={`w-full rounded-md ring-1 outline-none ${dark ? 'dark-input' : 'light-input'}`}
-                                placeholder=" Search..."
+                                className={`w-full rounded-md text-center ring-1 outline-none ${dark ? 'dark-input' : 'light-input'}`}
+                                placeholder="Search..."
                             />
                         </div>
                         <div className="search-icon absolute">

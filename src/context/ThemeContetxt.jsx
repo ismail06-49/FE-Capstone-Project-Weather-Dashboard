@@ -5,7 +5,7 @@ export const ThemeContext = createContext();
 export default function ThemeProvider({ children }) {
 
     const [dark, setDark] = useState(false);
-    const url = '../../public/dist/weather_icons/set04/big'
+    const url = '/dist/weather_icons/set04/big'
 
     function saveThemeToLocal(theme) {
         localStorage.setItem('theme', JSON.stringify(theme))

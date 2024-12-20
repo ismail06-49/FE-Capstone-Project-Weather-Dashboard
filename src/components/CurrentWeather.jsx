@@ -1,9 +1,8 @@
 import { useContext } from 'react';
-import data from '../api/Current.json';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { ThemeContext } from '../context/ThemeContetxt';
 
-export default function CurrentWeather() {
+export default function CurrentWeather({data}) {
     const { url } = useContext(ThemeContext);
     const {
         cloud_cover,
