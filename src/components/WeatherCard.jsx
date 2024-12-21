@@ -1,3 +1,4 @@
+import HorizontalScroll from "./HorizontalScroll";
 import HourlyWidget from "./HourlyWidget";
 
 export default function WeatherCard({title, data}) {
@@ -7,13 +8,13 @@ export default function WeatherCard({title, data}) {
     return (
         <div className="Weather-card">
             <h2 className="my-4 ms-4 text-3xl">{title}</h2>
-            <div className="flex flex-row">
+            <HorizontalScroll className="flex flex-row overflow-hidden" style={{cursor: 'pointer', overflowX: 'hidden'}}>
                 {dayHours.map((singleData) => (
                     <div key={singleData.date}>
                         <HourlyWidget data={singleData} />
                     </div>
                 ))}
-            </div>
+            </HorizontalScroll>
         </div>
     )
 }
