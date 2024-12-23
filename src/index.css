@@ -12,27 +12,27 @@
 
 @layer components {
   .dark-bar {
-    @apply bg-gray-900 text-white
+    @apply bg-gray-900 text-white px-1 sm:px-7
   }
   .light-bar {
-    @apply bg-gray-400 text-gray-900
+    @apply bg-gray-400 text-gray-900 px-1 sm:px-7
   }
   .dark-input {
-    @apply bg-gray-900 text-white  ring-gray-200
+    @apply bg-gray-900 text-white placeholder-gray-400
   }
   .light-input {
-    @apply bg-gray-200 text-gray-900 ring-gray-600
+    @apply bg-gray-400 text-gray-900 placeholder-gray-900
   }
   .dark-main{
-    @apply bg-gray-700 text-white
+    @apply bg-gray-700 text-white px-1 sm:px-7
   }
   .light-main{
-    @apply bg-gray-200 text-gray-800
+    @apply bg-gray-200 text-gray-800 px-1 sm:px-7
   }
   .dark-card{
-    @apply bg-gray-800 text-white
+    @apply bg-gray-800 text-white hover:scale-110
   }
   .light-card{
-    @apply bg-gray-300 text-gray-800
+    @apply bg-gray-300 text-gray-800 hover:scale-110
   }
 }

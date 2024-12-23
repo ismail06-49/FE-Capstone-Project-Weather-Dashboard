@@ -15,15 +15,15 @@ export default function Header() {
         <div className={`header ${dark ? 'dark-bar' : 'light-bar'}`}>
             <nav>
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                    <div className="text-center flex flex-row items-center">
+                    <div className="text-center hover:scale-110 cursor-pointer flex flex-row items-center">
                         <MdLocationOn className="text-xl" />
-                        <h1 className="text-lg md:text-xl lg:text-2xl">Marrakech, MA</h1>
+                        <h1 className="text-lg md:text-xl lg:text-xl">Marrakech, MA</h1>
                     </div>
                     <div className="search w-full md:w-1/2 flex flex-row-reverse items-center mt-2 md:mt-0">
                         <div className="search-input w-full">
                             <input
                                 type="text"
-                                className={`w-full rounded-md text-center ring-1 outline-none ${dark ? 'dark-input' : 'light-input'}`}
+                                className={`w-full text-center hover:border-b outline-none ${dark ? 'dark-input' : 'light-input'}`}
                                 placeholder="Search..."
                             />
                         </div>
@@ -32,10 +32,10 @@ export default function Header() {
                         </div>
                     </div>
                     <div className="settings flex flex-row items-center absolute md:static end-0 -translate-y-5 md:translate-y-0 -translate-x-4 md:translate-x-0 mt-2 md:mt-0">
-                        <div className="theme cursor-pointer" onClick={themeHandle}>
+                        <div className="theme cursor-pointer hover:scale-110" onClick={themeHandle}>
                             {dark ? <IoMoonSharp className="text-xl" /> : <MdSunny className="text-xl" />}
                         </div>
-                        <div className="setting ms-4">
+                        <div className="setting hover:scale-110 ms-4">
                             <MdSettings className="text-xl" />
                         </div>
                     </div>
