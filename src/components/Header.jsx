@@ -27,7 +27,7 @@ export default function Header() {
                                 placeholder="Search..."
                             />
                         </div>
-                        <div className="search-icon absolute">
+                        <div className="search-icon hidden md:block absolute">
                             <MdSearch className="text-xl" />
                         </div>
                     </div>

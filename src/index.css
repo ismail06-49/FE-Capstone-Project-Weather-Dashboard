@@ -24,15 +24,27 @@
     @apply bg-gray-400 text-gray-900 placeholder-gray-900
   }
   .dark-main{
-    @apply bg-gray-700 text-white px-1 sm:px-7
+    @apply bg-gray-700 text-white px-1 py-10 sm:px-7
   }
   .light-main{
-    @apply bg-gray-200 text-gray-800 px-1 sm:px-7
+    @apply bg-gray-200 text-gray-800 px-1 py-10 sm:px-7
   }
   .dark-card{
-    @apply bg-gray-800 text-white hover:scale-110
+    @apply bg-gray-800/60 text-white hover:scale-110
   }
   .light-card{
-    @apply bg-gray-300 text-gray-800 hover:scale-110
+    @apply bg-gray-300/60 text-gray-800 hover:scale-110
+  }
+  .dark-footer{
+    @apply bg-gray-800 text-white
+  }
+  .light-footer{
+    @apply bg-gray-300 text-gray-800
+  }
+  .dark-break{
+    @apply border-gray-400
+  }
+  .light-break{
+    @apply border-gray-800
   }
 }
