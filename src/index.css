@@ -23,6 +23,12 @@
   .light-input {
     @apply bg-gray-400 text-gray-950 placeholder-gray-900
   }
+  .dark-search{
+    @apply bg-gray-800 text-gray-200 
+  }
+  .light-search{
+    @apply bg-gray-300 text-gray-800 
+  }
   .dark-main{
     @apply bg-gray-900 text-white px-1 py-10 sm:px-7
   }

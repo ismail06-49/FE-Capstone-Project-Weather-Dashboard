@@ -16,9 +16,7 @@ export default function HourlyWidget(data) {
         precipitation,
         wind
     } = data.data;
-    console.log(data);
     
-
     const now_date = {
         day: new Intl.DateTimeFormat(navigator.language, {
             weekday: 'short',
