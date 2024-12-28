@@ -35,6 +35,12 @@
   .light-main{
     @apply bg-gray-200 text-gray-900 px-1 py-10 sm:px-7
   }
+  .dark-loader{
+    @apply bg-gray-900 text-white
+  }
+  .light-loader{
+    @apply bg-gray-200 text-gray-900
+  }
   .dark-card{
     @apply bg-gray-800/60 text-white
   }
