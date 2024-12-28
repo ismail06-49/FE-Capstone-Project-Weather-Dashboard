@@ -4,6 +4,7 @@ import { WeatherContext } from "../context/WeatherContext";
 import CurrentWeather from "./CurrentWeather";
 import WeatherCard from "./WeatherCard";
 import LoadingPage from "./LoadingPage";
+import { ToastContainer } from "react-toast";
 
 export default function Main() {
 
@@ -19,6 +20,7 @@ export default function Main() {
                     <WeatherCard type='daily' title='DAILY FORECAST' data={dailyForecast} />
                 </div>
             }
+                    <ToastContainer delay={3000} />
         </div>
     )
 }

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from 'react-toast'
 
 export async function getWeatherData(endpoint, place_id, measurementSystem) {
 
@@ -21,6 +22,7 @@ export async function getWeatherData(endpoint, place_id, measurementSystem) {
         return response.data;
     } catch (error) {
         console.error(error);
+        toast.error(error.message)
     }
 }
 
@@ -44,5 +46,6 @@ export async function searchPlaces(text) {
         return response.data;
     } catch (error) {
         console.error(error);
+        toast.error(error.message)
     }
 }
