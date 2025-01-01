@@ -61,7 +61,7 @@ export default function Header() {
                         {
                             showSearch && (<div className={`${dark ? 'dark-search' : 'light-search'} absolute min-w-72 top-0 translate-y-20 sm:translate-y-14 rounded-lg`}>
                                 {
-                                    search.map((result) => (
+                                    search.length > 0 && search.map((result) => (
                                         <div className="cursor-pointer p-2" key={result.place_id} onClick={() => changePlaces(result)}>
                                             {result.name}, {result.adm_area1}, {result.country}
                                         </div>
@@ -74,14 +74,14 @@ export default function Header() {
                         <div className="theme cursor-pointer hover:scale-110" onClick={themeHandle}>
                             {dark ? <IoMoonSharp className="text-xl" /> : <MdSunny className="text-xl" />}
                         </div>
-                        <div className="setting hover:scale-110 ms-4" onClick={() => setShowSettings(!showSettings)}>
+                        <div className="setting hover:scale-110 ms-4 cursor-pointer" onClick={() => setShowSettings(!showSettings)}>
                             <MdSettings className="text-xl" />
                         </div>
                         <div className={`${showSettings ? 'block' : 'hidden'} ${dark ? 'dark-main' : 'light-main'} p-4 absolute w-72 top-0 end-0 translate-y-16 sm:translate-y-9 rounded-3xl`}>
                             <h4>Measurement System</h4>
                             <div className={`mt-4 flex flex-row gap-2 flex-wrap items-center`}>
                                 {Object.values(MEASUREMENT_SYSTEM).map((system) => (
-                                    <div className={`${dark ? 'dark-card' : 'light-card'} ${system === measurementSystem ? 'opacity-100' : 'opacity-50'} w-20 h-8 rounded-lg text-center`} onClick={() => changeMeasurementSystem(system)} key={system}>{system}</div>
+                                    <div className={`${dark ? 'dark-card' : 'light-card'} ${system === measurementSystem ? 'opacity-100' : 'opacity-50'} cursor-pointer w-20 h-8 rounded-lg text-center`} onClick={() => changeMeasurementSystem(system)} key={system}>{system}</div>
                                 ))}
                             </div>
                         </div>
