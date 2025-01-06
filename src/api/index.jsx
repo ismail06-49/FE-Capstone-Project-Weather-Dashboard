@@ -12,7 +12,7 @@ export async function getWeatherData(endpoint, place_id, measurementSystem) {
             units: measurementSystem
         },
         headers: {
-            'x-rapidapi-key': import.meta.env.VITE_API_KEY,
+            'x-rapidapi-key': 'efb7faeb42msh9d98b513f2aba96p15c782jsn754d142aebb7',
             'x-rapidapi-host': 'ai-weather-by-meteosource.p.rapidapi.com'
         }
     };
@@ -36,7 +36,7 @@ export async function searchPlaces(text) {
             language: 'en'
         },
         headers: {
-            'x-rapidapi-key': import.meta.env.VITE_API_KEY,
+            'x-rapidapi-key': 'efb7faeb42msh9d98b513f2aba96p15c782jsn754d142aebb7',
             'x-rapidapi-host': 'ai-weather-by-meteosource.p.rapidapi.com'
         }
     };
