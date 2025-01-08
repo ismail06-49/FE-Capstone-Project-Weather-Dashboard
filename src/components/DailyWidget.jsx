@@ -2,11 +2,14 @@ import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContetxt";
 import { WeatherContext } from "../context/WeatherContext";
 
+// DailyWidget component that displays daily weather information
 export default function DailyWidget({ data }) {
 
+    // Using useContext to access theme and weather context values
     const { url, dark } = useContext(ThemeContext)
     const { units } = useContext(WeatherContext);
 
+    // Destructuring the data prop to extract necessary weather information
     const {
         day,
         icon,
@@ -17,6 +20,7 @@ export default function DailyWidget({ data }) {
         weather
     } = data;
 
+    // Formatting the current date to match the format of the weather data
     const now_date = {
         day: new Intl.DateTimeFormat(navigator.language, {
             weekday: 'short',
@@ -24,6 +28,8 @@ export default function DailyWidget({ data }) {
             month: '2-digit'
         }).format(new Date())
     }
+
+    // Formatting the weather date to match the format of the current date
     const weather_date = {
         day: new Intl.DateTimeFormat(navigator.language, {
             weekday: 'short',
@@ -32,8 +38,10 @@ export default function DailyWidget({ data }) {
         }).format(new Date(day))
     }
 
+    // If the weather date is the same as the current date, display "Today" instead of the date
     weather_date.day = weather_date.day === now_date.day ? 'Today' : weather_date.day;
 
+    // Rendering the widget with weather information
     return (
         <div className={`${dark ? 'dark-card' : 'light-card'} hover:scale-110 widget shadow-md h-52 w-40 rounded-lg p-4 m-2 flex flex-col items-center justify-between`}>
             <div className="day text-lg font-semibold">{weather_date.day}</div>

@@ -7,18 +7,23 @@ import { IoMoonSharp } from "react-icons/io5";
 import { MEASUREMENT_SYSTEM } from "../constant";
 
 export default function Header() {
+    // Accessing theme and weather contexts
     const { dark, setDark, saveThemeToLocal } = useContext(ThemeContext);
     const { place, setPlace, measurementSystem, setMeasurementSystem } = useContext(WeatherContext);
+
+    // State for managing search input, search results, and UI visibility
     const [text, setText] = useState('');
     const [search, setSearch] = useState([]);
     const [showSearch, setShowSearch] = useState(false);
     const [showSettings, setShowSettings] = useState(false);
 
+    // Function to toggle between dark and light themes
     function themeHandle() {
         setDark(!dark);
         saveThemeToLocal(!dark);
     }
 
+    // Function to handle search input changes
     async function handleSearch(e) {
         setText(e.target.value)
         const data = await searchPlaces(e.target.value)
@@ -26,12 +31,14 @@ export default function Header() {
         setShowSearch(data.length)
     }
 
+    // Function to update the selected place
     const changePlaces = (place) => {
         setPlace(place)
         setText('')
         setShowSearch(false)
     }
 
+    // Function to update the measurement system
     const changeMeasurementSystem = (system) => {
         setMeasurementSystem(system)
         setShowSettings(false)

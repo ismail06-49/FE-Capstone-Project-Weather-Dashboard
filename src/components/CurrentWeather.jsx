@@ -1,12 +1,15 @@
-import { useContext } from 'react';
-import 'bootstrap-icons/font/bootstrap-icons.css';
-import { ThemeContext } from '../context/ThemeContetxt';
-import { WeatherContext } from '../context/WeatherContext';
+import { useContext } from 'react'; // Importing useContext hook from React
+import 'bootstrap-icons/font/bootstrap-icons.css'; // Importing Bootstrap icons CSS
+import { ThemeContext } from '../context/ThemeContetxt'; // Importing ThemeContext for theme-related data
+import { WeatherContext } from '../context/WeatherContext'; // Importing WeatherContext for weather-related data
 
-export default function CurrentWeather({data}) {
-    const { url, dark } = useContext(ThemeContext);
-    const { units } = useContext(WeatherContext);
+// CurrentWeather component that displays the current weather details
+export default function CurrentWeather({ data }) {
+    // Using useContext to access theme and weather context values
+    const { url, dark } = useContext(ThemeContext); // url for weather icons, dark for theme mode
+    const { units } = useContext(WeatherContext); // units for measurement (e.g., temperature, wind speed)
 
+    // Destructuring the weather data passed as props
     const {
         cloud_cover,
         feels_like,
@@ -20,6 +23,7 @@ export default function CurrentWeather({data}) {
         wind,
     } = data;
 
+    // Array of weather information to display
     const info = [
         {
             id: 0,
@@ -66,6 +70,7 @@ export default function CurrentWeather({data}) {
     ];
 
     return (
+        // Main container for the weather card, with dynamic styling based on theme
         <div className={`${dark ? 'dark-card' : 'light-card'} max-w-md md:max-w-full mx-auto p-4 rounded-lg shadow-md`}>
             <div className="flex flex-col items-center md:absolute md:start-1/2 md:-translate-x-1/2">
                 <div className="weather-icon mb-4">

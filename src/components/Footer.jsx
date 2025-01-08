@@ -3,15 +3,18 @@ import { ThemeContext } from "../context/ThemeContetxt";
 import { FaGithubSquare, FaFacebookSquare, FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
-    const { dark } = useContext(ThemeContext);
+    const { dark } = useContext(ThemeContext); // Access the 'dark' theme state from ThemeContext
 
     return (
+        // Footer container with dynamic class based on the theme (dark or light)
         <div className={` ${dark ? 'dark-footer' : 'light-footer'} p-4`}>
             <hr className={`${dark ? 'dark-break' : 'light-break'} w-4/5 mx-auto lg:my-8`} />
             <div className="flex flex-col mt-4 sm:w-3/4 sm:mx-auto sm:flex-row justify-between items-center">
+                {/* Copyright text with a link to the GitHub profile */}
                 <div className="text-center sm:text-left">
                     © 2024 <a href="https://github.com/ismail06-49" target="_blank" className="font-semibold hover:underline">Ismail Haddad</a>. All Rights Reserved.
                 </div>
+                {/* List of social media icons with links */}
                 <ul className="flex space-x-4 mt-2 sm:mt-0">
                     <li>
                         <a href="https://github.com/ismail06-49" target="_blank" className="text-gray-600 hover:text-blue-500">

@@ -4,10 +4,11 @@ import { WeatherContext } from "../context/WeatherContext";
 import { BsFillSendFill } from "react-icons/bs";
 
 export default function HourlyWidget(data) {
-    
-    const { url, dark } = useContext(ThemeContext);
-    const { units } = useContext(WeatherContext);
+    // Using useContext to access theme and weather context values
+    const { url, dark } = useContext(ThemeContext); // url for icon paths, dark for theme mode
+    const { units } = useContext(WeatherContext); // units for temperature, precipitation, and wind speed
 
+    // Destructuring data passed as props
     const {
         date,
         icon,
@@ -17,6 +18,7 @@ export default function HourlyWidget(data) {
         wind
     } = data.data;
     
+    // Creating a formatted date object for the current time
     const now_date = {
         day: new Intl.DateTimeFormat(navigator.language, {
             weekday: 'short',
@@ -28,6 +30,8 @@ export default function HourlyWidget(data) {
             minute: '2-digit'
         }).format(new Date().setMinutes(0))
     };
+    
+    // Creating a formatted date object for the weather data's date
     const weather_date = {
         day: new Intl.DateTimeFormat(navigator.language, {
             weekday: 'short',
@@ -40,11 +44,13 @@ export default function HourlyWidget(data) {
         }).format(new Date(date).setMinutes(0))
     };
 
+    // Adjusting the displayed day based on the current date and time
     weather_date.day = weather_date.day === now_date.day && 
         weather_date.time === now_date.time ? 'Today' :
         weather_date.time === '00:00' ? weather_date.day : '';
 
     return (
+        // Main widget container with dynamic styling based on the theme
         <div className={`${dark ? 'dark-card' : 'light-card'} hover:scale-110 widget shadow-md h-52 w-40 rounded-lg p-4 m-2 flex flex-col items-center justify-between`}>
             <div className="day text-lg font-semibold">{weather_date.day}</div>
             <div className="time text-sm text-gray-500">{weather_date.time}</div>
