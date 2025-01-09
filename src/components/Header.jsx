@@ -14,7 +14,6 @@ export default function Header() {
     // State for managing search input, search results, and UI visibility
     const [text, setText] = useState('');
     const [search, setSearch] = useState([]);
-    const [showSearch, setShowSearch] = useState(false);
     const [showSettings, setShowSettings] = useState(false);
 
     // Function to toggle between dark and light themes
@@ -28,14 +27,12 @@ export default function Header() {
         setText(e.target.value)
         const data = await searchPlaces(e.target.value)
         setSearch(data)
-        setShowSearch(data.length)
     }
 
     // Function to update the selected place
     const changePlaces = (place) => {
         setPlace(place)
         setText('')
-        setShowSearch(false)
     }
 
     // Function to update the measurement system
@@ -65,7 +62,7 @@ export default function Header() {
                         <MdSearch className="text-xl" />
                     </div>
                     {
-                        showSearch && (<div className={`${dark ? 'dark-search' : 'light-search'} absolute min-w-72 top-0 translate-y-20 sm:translate-y-14 rounded-lg`}>
+                        search.length > 0 && (<div className={`${dark ? 'dark-search' : 'light-search'} absolute z-10 min-w-72 top-0 translate-y-20 sm:translate-y-14 rounded-lg`}>
                             {
                                 search.length > 0 && search.map((result) => (
                                     <div className="cursor-pointer p-2" key={result.place_id} onClick={() => changePlaces(result)}>
